@@ -1,15 +1,19 @@
-import {Link, Outlet} from "react-router-dom";
-import { useContext } from "react";
+import {Link, Outlet} from 'react-router-dom';
+import { useContext } from 'react';
 
-import { UserContext } from "../../../context/user.context";
-import {signOutUser} from "../../../utils/firebase/firebase.utils";
+import { UserContext } from '../../../context/user.context';
+import { CardContext } from '../../../context/card.context';
+
+import  CardIcon  from '../../../components/card-icon/card-icon.component';
+import CardDropdown from '../../card-dropdown/card-dropdown.component';
+
+import {signOutUser} from '../../../utils/firebase/firebase.utils';
 
 import './navigation.styles.scss';
 
 const Navigation = () => {
     const { currentUser } = useContext(UserContext);
-
-
+    const { isCardOpen } = useContext(CardContext);
 
     return (
         <>
@@ -30,7 +34,9 @@ const Navigation = () => {
                             </Link>
                         )
                     }
+                    <CardIcon />
                 </div>
+                {isCardOpen && <CardDropdown />}
             </div>
             <Outlet />
         </>
