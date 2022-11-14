@@ -1,8 +1,8 @@
 import {Link, Outlet} from 'react-router-dom';
 import { useContext } from 'react';
 
-import { UserContext } from '../../../context/user.context';
-import { CardContext } from '../../../context/card.context';
+import { UserContext } from '../../../contexts/user.context';
+import { CardContext } from '../../../contexts/card.context';
 
 import  CardIcon  from '../../../components/card-icon/card-icon.component';
 import CardDropdown from '../../card-dropdown/card-dropdown.component';
